@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +9,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   login : FormGroup;
-  //submitted = false;
-  constructor() { }
+  constructor(private usersservice :  UsersService) { }
 
   ngOnInit() {
     this.login = new FormGroup({
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     //this.submitted = true;
     if(this.login.valid){
       console.log("submitted form");
+      console.log(this.usersservice.get_data());
     }else{
      console.log('not submitted'); 
     }

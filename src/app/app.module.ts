@@ -21,7 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationComponent } from './animation/animation.component';
 import { RegisterComponent } from './register/register.component';
-
+import { UsersService } from './services/users.service';
+import { UsersservicescomComponent } from './usersservicescom/usersservicescom.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -31,10 +32,9 @@ const appRoutes: Routes = [
   {path:'contact-us',component:ContactusComponent},
   {path:'ReactiveForms',component:ReactiveFormsComponent},
   {path:'ProfileEditor',component:ProfileEditorComponent},
-  {path:'register',component:RegisterComponent}  
+  {path:'register',component:RegisterComponent},
+  {path:'listservice',component:UsersservicescomComponent}  
   
-  //{ path: 'contact', component: ContactusComponent },
-  //{ path: 'dashboard',canActivate:[AuthguardGuard],component: DashboardComponent },
 ];
 
 @NgModule({
@@ -52,6 +52,7 @@ const appRoutes: Routes = [
     LoginComponent,
     AnimationComponent,
     RegisterComponent,
+    UsersservicescomComponent,
     
   ],
   imports: [
@@ -64,7 +65,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
