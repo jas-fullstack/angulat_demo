@@ -1,0 +1,22 @@
+<div class="container">
+<form [formGroup]="login" (ngSubmit)="login_form()">
+   
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" formControlName="username" name="uname" autocomplete="false">
+      <div *ngIf="username.errors && (username.dirty || username.touched)">
+          <p class="">User Name is required.</p>
+      </div>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" formControlName="password" >
+      
+      <div *ngIf="password.errors && (password.dirty || password.touched )">
+          <p class="">Password is required</p>
+      </div>
+
+       <button type="submit" class="btn btn-success"  >Login</button>
+       <a [routerLink]="['/register']" type="button" class="btn btn-success"  >Register</a>
+ 
+    </div>
+  </form>
+</div>

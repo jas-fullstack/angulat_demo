@@ -1,0 +1,13 @@
+
+<ul>
+<li *ngFor="let hero of httpdata" (click)="displayhero(hero)">{{hero.title}}</li>
+</ul>
+<div *ngIf="hero != undefinded">
+    <h2>{{hero.title | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+    <label>name:
+        <input [(ngModel)]="hero.title" placeholder="name">
+    </label>
+    </div>
+</div>
